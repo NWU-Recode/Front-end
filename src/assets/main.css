@@ -93,18 +93,11 @@ body {
 
 /* Example usage of hover/active */
 button, .btn {
-  background-color: var(--color-primary);
-  color: white;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
   border-radius: var(--radius-lg);
   transition: background-color 0.2s ease;
-}
-
-button:hover, .btn:hover {
-  background-color: var(--color-primary-hover);
-}
-
-button:active, .btn:active {
-  background-color: var(--color-primary-active);
 }
 
 /* Link styles */
