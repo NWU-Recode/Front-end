@@ -1,0 +1,136 @@
+@import './base.css';
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@import './base.css';
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Theme tokens only */
+@theme {
+  --font-sans: Figtree, system-ui, sans-serif;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  --color-primary: var(--ui-color-primary-600);
+  --color-primary-hover: var(--ui-color-primary-500);
+  --color-primary-active: var(--ui-color-primary-700);
+
+  --color-secondary: var(--ui-color-secondary-600);
+  --color-secondary-hover: var(--ui-color-secondary-500);
+  --color-secondary-active: var(--ui-color-secondary-700);
+
+  --color-tertiary: var(--ui-color-tertiary-600);
+  --color-tertiary-hover: var(--ui-color-tertiary-500);
+  --color-tertiary-active: var(--ui-color-tertiary-700);
+
+  --color-success: var(--ui-color-success-600);
+  --color-success-hover: var(--ui-color-success-500);
+  --color-success-active: var(--ui-color-success-700);
+
+  --color-warning: var(--ui-color-warning-600);
+  --color-warning-hover: var(--ui-color-warning-500);
+  --color-warning-active: var(--ui-color-warning-700);
+
+  --color-error: var(--ui-color-error-600);
+  --color-error-hover: var(--ui-color-error-500);
+  --color-error-active: var(--ui-color-error-700);
+
+  --color-neutral: var(--ui-color-neutral-600);
+  --color-neutral-hover: var(--ui-color-neutral-500);
+  --color-neutral-active: var(--ui-color-neutral-700);
+}
+
+/* Apply tokens in context */
+:root {
+  --ui-bg: var(--ui-color-neutral-50);
+  --ui-text: var(--ui-color-neutral-900);
+  --ui-border: var(--ui-color-neutral-200);
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-text: var(--ui-color-neutral-100);
+  --ui-border: var(--ui-color-neutral-800);
+
+  --color-primary-hover: var(--ui-color-primary-700);
+  --color-primary-active: var(--ui-color-primary-500);
+
+  --color-secondary-hover: var(--ui-color-secondary-700);
+  --color-secondary-active: var(--ui-color-secondary-500);
+
+  --color-tertiary-hover: var(--ui-color-tertiary-700);
+  --color-tertiary-active: var(--ui-color-tertiary-500);
+
+  --color-success-hover: var(--ui-color-success-700);
+  --color-success-active: var(--ui-color-success-500);
+
+  --color-warning-hover: var(--ui-color-warning-700);
+  --color-warning-active: var(--ui-color-warning-500);
+
+  --color-error-hover: var(--ui-color-error-700);
+  --color-error-active: var(--ui-color-error-500);
+
+  --color-neutral-hover: var(--ui-color-neutral-700);
+  --color-neutral-active: var(--ui-color-neutral-500);
+}
+
+body {
+  @apply font-sans bg-[var(--ui-bg)] text-[var(--ui-text)];
+}
+
+#app {
+  max-width: 1280px;
+  margin: 50px;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+/* Example usage of hover/active */
+button, .btn {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  transition: background-color 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button:active, .btn:active {
+  background-color: var(--color-primary-active);
+}
+
+/* Link styles */
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
